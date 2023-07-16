@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,200;0,300;0,400;0,500;0,600;1,400&display=swap');
+
+$secondary: #f5f6ea;
+$primary: #d542159e;
+$black: rgba(0,0,0,.95);
+$grey: rgba(0,0,0,.05);
+
+$logofont: 'Pacifico', cursive;
+$mainfont: 'Montserrat Alternates', sans-serif;
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: $secondary;
+}
+header {
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
+    #headerLogo {
+        font-family: $logofont;
+        font-size: 48px;
+        color: white;
+    }
+}

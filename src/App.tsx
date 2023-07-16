@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./globals.scss";
+import Header from "./Header";
+import axios from "axios";
 
 function App() {
+  axios.get(' https://api.edamam.com/api/recipes/v2', {
+    params: {
+      app_id: "06af1388",
+      app_key: "73b44e63ba2ecf3b98e0c3a5d387e558",
+      health: "kosher",
+      type: "public"
+    }
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className="App"></div>
+    </>
   );
 }
 
