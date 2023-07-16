@@ -3,13 +3,15 @@
 
 $secondary: #f5f6ea;
 $primary: #d542159e;
-$black: rgba(0,0,0,.95);
-$grey: rgba(0,0,0,.05);
+$black: rgb(0, 0, 0);
+$grey: rgb(57, 57, 57);
 
 $logofont: 'Pacifico', cursive;
 $mainfont: 'Montserrat Alternates', sans-serif;
 
 * {
+    font-family: $mainfont;
+    font-weight: 500;
     box-sizing: border-box;
 }
 body {
