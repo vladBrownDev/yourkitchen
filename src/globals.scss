@@ -17,6 +17,9 @@ $mainfont: 'Montserrat Alternates', sans-serif;
 body {
     background-color: $secondary;
 }
+.App {
+    min-height: calc(100vh - 168px);
+}
 header {
     background-color: $primary;
     display: flex;
@@ -26,4 +29,8 @@ header {
         font-size: 48px;
         color: white;
     }
+}
+footer {
+    height: 84px;
+    background-color: $primary;
 }

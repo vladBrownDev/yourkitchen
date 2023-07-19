@@ -6,12 +6,12 @@ main {
     &>h1 {
         font-weight: 700;
         color: $grey;
-        margin-top: 100px;
+        margin-top: 130px;
     }
     #main__buttonsWrapper {
         display: flex;
         gap: 30px;
-        margin-top: 40px;
+        margin-top: 20px;
         #main__optionsBtn, #main__searchBtn {
             height: 300px;
             width: 300px;
@@ -33,6 +33,7 @@ main {
             h3 {
                 font-size: 22px;
                 margin-top: 0;
+                max-width: 80%;
             }
         }
         #main__optionsBtn:hover, #main__searchBtn:hover {

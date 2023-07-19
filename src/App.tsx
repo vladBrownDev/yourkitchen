@@ -1,6 +1,7 @@
 import "./globals.scss";
 import Header from "./Header";
 import Main from "./components/Main/Main"
+import Footer from "./Footer";
 import axios from "axios";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <div className="App">
         <Main/>
       </div>
+      <Footer />
     </>
   );
 }
