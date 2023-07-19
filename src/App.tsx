@@ -3,6 +3,10 @@ import Header from "./Header";
 import Main from "./components/Main/Main"
 import Footer from "./Footer";
 import axios from "axios";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 function App() {
   // axios.get(' https://api.edamam.com/api/recipes/v2', {
@@ -22,11 +26,21 @@ function App() {
   // .finally(function () {
   //   // always executed
   // });  
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Main />,
+    },
+    {
+      path:"/helo",
+      element: <Footer />
+    }
+  ]);
   return (
     <>
       <Header />
       <div className="App">
-        <Main/>
+        <RouterProvider router={router} />
       </div>
       <Footer />
     </>
