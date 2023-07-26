@@ -2,42 +2,29 @@ import "./globals.scss";
 import Header from "./Header";
 import Main from "./components/Main/Main";
 import Footer from "./Footer";
-import axios from "axios";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RecieptSearch from "./components/Reciept/RecieptSearch";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
-  async function getData(props: {q: String}) {
-    const response = await axios.get(" https://api.edamam.com/api/recipes/v2", {
-      params: {
-        app_id: "06af1388",
-        app_key: "73b44e63ba2ecf3b98e0c3a5d387e558",
-        ...props,
-        type: "public",
-      },
-    });
-    console.log(response)
-    return response
-  }
-  
+  const [searchState, setSearchState] = useState("");
+  console.log(searchState);
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main />,
-    },
-    {
-      path: "/helo",
-      element: <Footer />,
-    },
-  ]);
   return (
-    <>
-      <Header />
+    <BrowserRouter>
+      <Header
+        setSearch={(str: string) => {
+          setSearchState(str);
+        }}
+      />
       <div className="App">
-        <RouterProvider router={router} />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/search" element={<RecieptSearch q={searchState} />} />
+        </Routes>
       </div>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 

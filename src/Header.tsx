@@ -1,8 +1,10 @@
 import "./globals.scss";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
-function Header() {
+function Header(props: { setSearch: (str: string) => void }) {
   const [inputValue, setInputValue] = useState("");
+
   return (
     <header className="mainHeader">
       <div id="headerLogo">YourKitchen</div>
@@ -15,7 +17,15 @@ function Header() {
           type="text"
           placeholder="Find dish by the name"
         />
-        <button id="searchBtn" type="button"></button>
+        <NavLink
+          to={"search"}
+          onClick={() => {
+            props.setSearch(inputValue);
+          }}
+          id="searchBtn"
+        >
+
+        </NavLink>
       </form>
     </header>
   );
