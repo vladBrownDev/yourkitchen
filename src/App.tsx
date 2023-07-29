@@ -8,7 +8,6 @@ import { useState } from "react";
 
 function App() {
   const [searchState, setSearchState] = useState("");
-  console.log(searchState);
 
   return (
     <BrowserRouter>

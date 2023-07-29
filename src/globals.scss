@@ -1,71 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,200;0,300;0,400;0,500;0,600;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,200;0,300;0,400;0,500;0,600;1,400&display=swap");
 
 $secondary: #f5f6ea;
 $primary: #d542159e;
 $black: rgb(0, 0, 0);
 $grey: rgb(57, 57, 57);
 
-$logofont: 'Pacifico', cursive;
-$mainfont: 'Montserrat Alternates', sans-serif;
+$logofont: "Pacifico", cursive;
+$mainfont: "Montserrat Alternates", sans-serif;
 
 * {
-    font-family: $mainfont;
-    font-weight: 500;
-    box-sizing: border-box;
+  font-family: $mainfont;
+  font-weight: 500;
+  box-sizing: border-box;
 }
 body {
-    background-color: $secondary;
+  background-color: $secondary;
 }
 .App {
-    min-height: calc(100vh - 168px);
+  min-height: calc(100vh - 168px);
 }
 a {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 header {
-    background-color: $primary;
+  background-color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  #headerLogo {
+    a {
+      font-family: $logofont;
+      font-size: 48px;
+      color: white;
+    }
+  }
+  #header__searchWrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 8%;
-    #headerLogo {
-        font-family: $logofont;
-        font-size: 48px;
-        color: white;
+    #searchBtn {
+      height: 44px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      background-color: $primary;
+      border: 0px;
+      position: relative;
+      right: 48px;
+      cursor: pointer;
+      background-size: 57%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("./images/search.svg");
     }
-    form {
-        display: flex;
-        align-items: center;
-        #searchBtn {
-            height: 44px;
-            aspect-ratio: 1 / 1;
-            border-radius: 50%;
-            background-color: $primary;
-            border: 0px;
-            position: relative;
-            right: 48px;
-            cursor: pointer;
-            background-size: 57%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-image: url("./images/search.svg");
-        }
+  }
+  input {
+    height: 50px;
+    border: none;
+    border-radius: 33px;
+    min-width: 400px;
+    padding-left: 20px;
+    font-size: 16px;
+    background-color: $secondary;
+    &:focus-visible {
+      outline: none;
     }
-    input {
-        height: 50px;
-        border: none;
-        border-radius: 33px;
-        min-width: 400px;
-        padding-left: 20px;
-        font-size: 16px;
-        background-color: $secondary;
-        &:focus-visible {
-            outline: none;
-        }
-    }
+  }
 }
 footer {
-    height: 84px;
-    background-color: $primary;
+  height: 84px;
+  background-color: $primary;
 }

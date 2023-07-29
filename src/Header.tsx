@@ -1,14 +1,23 @@
 import "./globals.scss";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function Header(props: { setSearch: (str: string) => void }) {
   const [inputValue, setInputValue] = useState("");
+  const btnRef = useRef<HTMLAnchorElement>(null)
+
+  function handleEnter(e: {key: string}) {
+    if(e.key === "Enter" && btnRef.current) {
+      btnRef.current.click();
+    }
+  }
 
   return (
     <header className="mainHeader">
-      <div id="headerLogo">YourKitchen</div>
-      <form action="">
+      <div id="headerLogo">
+        <NavLink to="/">YourKitchen</NavLink>
+      </div>
+      <span onKeyDown={(e) => {handleEnter(e)}} id="header__searchWrapper">
         <input
           value={inputValue}
           onChange={(e) => {
@@ -23,10 +32,9 @@ function Header(props: { setSearch: (str: string) => void }) {
             props.setSearch(inputValue);
           }}
           id="searchBtn"
-        >
-
-        </NavLink>
-      </form>
+          ref={btnRef}
+        ></NavLink>
+      </span>
     </header>
   );
 }

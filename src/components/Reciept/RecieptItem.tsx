@@ -1,10 +1,11 @@
 import "./Reciept.scss";
 
-function RecieptItem() {
+function RecieptItem(props:{url:string, title:string}) {
   return (
-    <main>
-        
-    </main>
+    <div className="recieptItem">
+        <img src={props.url} alt="Dish" />
+        <h3>{props.title}</h3>
+    </div>
   );
 }
 
