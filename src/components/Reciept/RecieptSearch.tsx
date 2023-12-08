@@ -25,9 +25,10 @@ type itemsType = {
   };
 };
 
-function RecieptSearch(props: { q: String }) {
+function RecieptSearch(props: {props: Props}) {
   const [items, setItems] = useState<itemsType[]>([]);
   const [isLoading, setLoading] = useState<boolean>(false)
+  console.log(props)
   useEffect(() => {
     async function getData(props: Props) {
       setLoading(true)
@@ -47,7 +48,7 @@ function RecieptSearch(props: { q: String }) {
       });
       setItems(response.data.hits);
     }
-    getData({ q: props.q });
+    getData(props.props);
   }, [props]);
   return (
     <main id="recieptSearch">
